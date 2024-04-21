@@ -1,0 +1,60 @@
+.Home {
+    height: 500px;
+    background-image: url('../images/home_img.png');
+    background-repeat: no-repeat;
+    background-position: 20% 30%;
+    text-align: center;
+}
+
+/* 
+    TODO: need to fix centering 
+*/
+.home-greet-box {
+    position: relative;
+    top: 100px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 75%;
+    
+}
+
+.motto {
+    color: #FFFFFF;
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: left;
+}
+
+.describe {
+    color: #FFFFFF;
+    margin-top: 40px;
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}
+
+.find-van {
+    width: 494.33px;
+    height: 49.83px;    
+    top: 383.7px;
+    left: 26.91px;
+    margin-top: 50px;
+    gap: 0px;
+    border-radius: 5px 0px 0px 0px;
+    opacity: 0px;
+    font-family: Inter;
+    font-size: 15.95px;
+    font-weight: 700;
+    line-height: 31.66px;
+    background-color: #FF8C38;
+    color: #FFFFFF;
+}
+
+.find-van:hover {
+    background-color: #FF8C38;
+    color: #FFFFFF;
+}

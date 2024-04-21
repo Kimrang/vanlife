@@ -1,0 +1,9 @@
+nav > a {
+    margin-right: 30px;
+    color: #4D4D4D;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;  
+}
