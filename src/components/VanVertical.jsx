@@ -2,13 +2,22 @@ import React from "react";
 import '../styles/VanVertical.css';
 
 export default function VanVertical({ imageUrl, name, price, type }) {
+    let type_title;
+
+    if(type === 'simple')
+        type_title = 'Simple';
+    else if(type === 'rugged')
+        type_title = 'Rugged';
+    else
+        type_title = 'Luxury'
+
     return (
-        <div className="VanVertical text-center mb-5 col-6">
-            <img className="van-img" src={imageUrl} alt="van" />
-            <div className="row mt-2">
-                <span className="van-name ms-3 col-8">{name}</span>
-                <span className="col">
-                    <div className="lh-1">
+        <div className="VanVertical text-center mb-5">
+            <img className="van-img" src={imageUrl} alt={`a ${name}`} />
+            <div className="d-flex mt-2">
+                <span className="van-name ms-3 w-50">{name}</span>
+                <span className="ms-5">
+                    <div>
                         <span className="van-price">${price}</span>
                         <br />/day
                     </div>
@@ -16,7 +25,7 @@ export default function VanVertical({ imageUrl, name, price, type }) {
             </div>
             <div className="text-start">
                 <button className={`van-type-btn ${type} ms-3`}>
-                    {type}
+                    {type_title}
                 </button>
             </div>
         </div>

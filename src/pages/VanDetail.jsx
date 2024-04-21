@@ -1,0 +1,45 @@
+import React, { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
+import '../styles/VanDetail.css';
+
+function VanDetail() {  
+    const [van, setVan] = useState(null);
+    const params = useParams();
+
+    useEffect(() => {
+        fetch(`/api/vans/${params.id}`)
+        .then(res => res.json())
+        .then(data => setVan(data.vans))
+    }, [params.id]);
+
+    return (
+        <main className="VanDetail">
+            <button 
+                className="van-type-filter-btn clear-filter-btn"
+            >
+                Back to all vans
+            </button>
+            {
+                (van !== null)
+                ?
+                (
+                    <div className="p-5">
+                        <img className="van-img-xl d-block" src={van.imageUrl} alt={`a ${van.name}`} />
+                        <div className="vandetail-page-info mt-5">
+                            <button className={`van-type-btn ${van.type}`}>{van.type.charAt(0).toUpperCase()+van.type.slice(1)}</button>
+                            <p className="vandetail-page-name mt-4">{van.name}</p>
+                            <p className="vandetail-page-price">${van.price}<span>/day</span></p>
+                            <p className="vandetail-page-desc">{van.description}</p>
+                            <button className="orange-long-btn">Rent this van</button>
+                        </div>
+                    </div>
+                )
+                :
+                ''
+            }
+            
+        </main>
+    );
+}
+
+export default VanDetail;

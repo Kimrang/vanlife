@@ -1,0 +1,31 @@
+.vandetail-page-name {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 33.65px;
+    text-align: left;
+}
+
+.vandetail-page-price {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 33.65px;
+    text-align: left;
+}
+
+.vandetail-page-price > span {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 44.15px;
+    text-align: left;
+}
+
+.vandetail-page-desc {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 23.92px;
+    text-align: left;
+}

@@ -41,15 +41,12 @@
     border-width: 0px;
 }
 
-.find-van-btn {
+.orange-long-btn {
     width: 494.33px;
     height: 49.83px;    
-    top: 383.7px;
-    left: 26.91px;
     margin-top: 50px;
-    gap: 0px;
+    border-width: 0px;
     border-radius: 5px;
-    opacity: 0px;
     font-family: Inter;
     font-size: 15.95px;
     font-weight: 700;
@@ -58,3 +55,12 @@
     color: #FFFFFF;
 }
 
+.van-img-xl {
+    width: 497.32px;
+    height: 490.35px;
+    top: 215.27px;
+    left: 26.91px;
+    gap: 0px;
+    border-radius: 5px 0px 0px 0px;
+    opacity: 0px;
+}

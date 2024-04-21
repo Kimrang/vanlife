@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
 import '../styles/Vans.css';
 import VanVertical from "../components/VanVertical";
 
@@ -7,12 +8,19 @@ function Vans() {
 
     const vans_list = vans.map(van => {
         return (
-            <VanVertical
-                imageUrl={van.imageUrl}
-                name={van.name}
-                price={van.price}
-                type={van.type}
-            />
+            <Link 
+                key={van.id}
+                to={`/vans/${van.id}`}
+                aria-label={`View details for ${van.name}, priced at ${van.price} per day`}
+                className="col-6"
+            >
+                <VanVertical
+                    imageUrl={van.imageUrl}
+                    name={van.name}
+                    price={van.price}
+                    type={van.type}
+                />
+            </Link>
         );
     });
 
@@ -21,8 +29,6 @@ function Vans() {
         .then(res => res.json())
         .then(data => setVans(data.vans))
     }, []);
-
-    console.log(vans);
 
     return (
         <main className="Vans"> 
