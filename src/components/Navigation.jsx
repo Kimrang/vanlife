@@ -4,7 +4,7 @@ import '../styles/Navigation.css';
 
 export default function Navigation() {
     return (
-        <div style={{backgroundColor: "#FFF7ED"}} className="Navigation">
+        <div className="Navigation">
             <header className="d-flex p-3">
                 <Link className="brand" to="/">#VANLIFE</Link>
                 <nav className="ms-auto p-2">

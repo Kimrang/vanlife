@@ -1,0 +1,22 @@
+.VanVertical .van-img {
+    /*width: 229.23px;
+    */
+    height: 229.23px;
+    border-radius: 5px;
+}
+
+.VanVertical .van-name {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.66px;
+    text-align: left;
+}
+
+.VanVertical .van-price {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.66px;
+    text-align: right;
+}

@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/About.css';
 import about_img from '../assets/images/about_img.png';
+import { Link } from "react-router-dom";
 
 function About() {
     return (
@@ -33,9 +34,11 @@ function About() {
                         Your destination is waiting.<br /> 
                         Your van is ready.
                     </p>
-                    <button className="explore-vans-btn link-btn">
-                        Explore our vans
-                    </button>
+                    <Link to="/vans">
+                        <button className="explore-vans-btn link-btn">
+                            Explore our vans
+                        </button>
+                    </Link>
                 </div>
             </div>
         </main>
