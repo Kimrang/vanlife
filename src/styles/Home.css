@@ -1,6 +1,6 @@
 .Home {
     height: 500px;
-    background-image: url('../images/home_img.png');
+    background-image: url('../assets/images/home_img.png');
     background-repeat: no-repeat;
     background-position: 20% 30%;
     text-align: center;
@@ -9,7 +9,7 @@
 /* 
     TODO: need to fix centering 
 */
-.home-greet-box {
+.home-page-greet {
     position: relative;
     top: 100px;
     margin-left: auto;
@@ -18,7 +18,7 @@
     
 }
 
-.motto {
+.home-page-greet .motto {
     color: #FFFFFF;
     font-family: Inter;
     font-size: 36px;
@@ -27,7 +27,7 @@
     text-align: left;
 }
 
-.describe {
+.home-page-greet .describe {
     color: #FFFFFF;
     margin-top: 40px;
     font-family: Inter;
@@ -37,14 +37,18 @@
     text-align: left;
 }
 
-.find-van {
+.link-btn {
+    border-width: 0px;
+}
+
+.find-van-btn {
     width: 494.33px;
     height: 49.83px;    
     top: 383.7px;
     left: 26.91px;
     margin-top: 50px;
     gap: 0px;
-    border-radius: 5px 0px 0px 0px;
+    border-radius: 5px;
     opacity: 0px;
     font-family: Inter;
     font-size: 15.95px;
@@ -54,7 +58,3 @@
     color: #FFFFFF;
 }
 
-.find-van:hover {
-    background-color: #FF8C38;
-    color: #FFFFFF;
-}
