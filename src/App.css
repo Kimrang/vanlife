@@ -9,7 +9,11 @@ a {
     text-decoration: none;
 }
 
-a.brand {
+nav {
+    display: flex;
+}
+
+.brand {
     font-family: "Inter", sans-serif;
     font-optical-sizing: auto;
     font-weight: 900;
@@ -63,3 +67,22 @@ a.brand {
     background-color: #161616;
 }
 
+.nav-link {
+    margin-right: 30px;
+    color: #4D4D4D;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-style: normal;
+    font-variation-settings: "slnt" 0;  
+}
+
+.nav-link:hover {
+    color: #161616;
+    text-decoration: underline;
+}
+
+.nav-link.active {
+    color: #161616;
+    text-decoration: underline;
+}

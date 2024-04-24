@@ -1,6 +1,6 @@
 import React from "react";
-import '../styles/About.css';
-import about_img from '../assets/images/about_img.png';
+import '../../styles/About.css';
+import about_img from '../../assets/images/about_img.png';
 import { Link } from "react-router-dom";
 
 function About() {

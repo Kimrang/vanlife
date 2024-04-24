@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
-import '../styles/Vans.css';
-import VanVertical from "../components/VanVertical";
+import '../../styles/Vans.css';
+import VanVertical from "../../components/VanVertical";
 
 function Vans() {
     const [vans, setVans] = useState([]);
@@ -37,13 +37,13 @@ function Vans() {
                     Explore our van options
                 </p>
                 <nav className="row">
-                    <button className="link-btn van-type-filter-btn col">
+                    <button className="van-type-filter-btn col">
                         Simple
                     </button>
-                    <button className="link-btn van-type-filter-btn col">
+                    <button className="van-type-filter-btn col">
                         Luxury
                     </button>
-                    <button className="link-btn van-type-filter-btn col">
+                    <button className="van-type-filter-btn col">
                         Rugged
                     </button>
                     <button className="van-type-filter-btn clear-filter-btn col">

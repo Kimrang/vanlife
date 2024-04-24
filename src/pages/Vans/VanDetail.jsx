@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import '../styles/VanDetail.css';
+import '../../styles/VanDetail.css';
 
 function VanDetail() {  
     const [van, setVan] = useState(null);
@@ -20,7 +20,7 @@ function VanDetail() {
                 Back to all vans
             </button>
             {
-                (van !== null)
+                van
                 ?
                 (
                     <div className="p-5">
@@ -35,7 +35,7 @@ function VanDetail() {
                     </div>
                 )
                 :
-                ''
+                <h2>Loading...</h2>
             }
             
         </main>

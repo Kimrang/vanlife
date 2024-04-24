@@ -1,15 +1,30 @@
 import React from "react";
-import { Link } from "react-router-dom";
-import '../styles/Navigation.css';
+import { NavLink } from "react-router-dom";
 
 export default function Navigation() {
     return (
         <div className="Navigation">
             <header className="d-flex p-3">
-                <Link className="brand" to="/">#VANLIFE</Link>
-                <nav className="ms-auto p-2">
-                    <Link to="/about">About</Link>
-                    <Link to="/vans">Vans</Link>
+                <NavLink className="brand" to="/">#VANLIFE</NavLink>
+                <nav className="d-flex ms-auto p-2">
+                    <NavLink 
+                        to="/host" 
+                        className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
+                    >
+                        Host
+                    </NavLink>
+                    <NavLink 
+                        to="/about" 
+                        className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
+                    >
+                        About
+                    </NavLink>
+                    <NavLink 
+                        to="/vans" 
+                        className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
+                    >
+                        Vans
+                    </NavLink>
                 </nav>
             </header>
         </div>
