@@ -13,7 +13,7 @@ export default function VanVertical({ imageUrl, name, price, type }) {
 
     return (
         <div className="VanVertical text-center mb-5">
-            <img className="van-img" src={imageUrl} alt={`a ${name}`} />
+            <img className="van-img-lg" src={imageUrl} alt={`a ${name}`} />
             <div className="d-flex mt-2">
                 <span className="van-name ms-3 w-50">{name}</span>
                 <span className="ms-5">

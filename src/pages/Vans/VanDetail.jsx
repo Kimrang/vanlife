@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, Link } from "react-router-dom";
 import '../../styles/VanDetail.css';
 
 function VanDetail() {  
@@ -14,11 +14,18 @@ function VanDetail() {
 
     return (
         <main className="VanDetail">
-            <button 
-                className="van-type-filter-btn clear-filter-btn"
-            >
-                Back to all vans
-            </button>
+            <Link
+                to=".."
+                relative="path"
+                className="ms-3"
+            >                
+                &larr;
+                <button 
+                    className="van-type-filter-btn clear-filter-btn m-0"
+                >
+                    Back to all vans
+                </button>
+            </Link>
             {
                 van
                 ?

@@ -4,45 +4,15 @@
 
 .about-page-img-div {
     height: 200px;
+    width: inherit;
     overflow-x: hidden;
     overflow-y: hidden;
 }
 
-.about-page-greet {
-    width: 550px;
-    margin: 40px auto;
-    text-align: left;
-}
-
-.about-page-greet .motto {
-    font-family: Inter;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: 38px;
-}
-
-.about-page-greet .describe {
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 22px;
-}
-
 .about-page-invite {
     background-color: #FFCC8D;
-    width: 494px;
-    height: 198px;
     padding: 40px;
-    margin: 0px auto 0px auto;
     border-radius: 5px;
-}
-
-.about-page-invite p {
-    font-family: Inter;
-    font-size: 24px;
-    font-weight: 700;
-    line-height: 30px;
-    text-align: left;
 }
 
 .explore-vans-btn {

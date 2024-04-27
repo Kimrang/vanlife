@@ -5,22 +5,27 @@ export default function Navigation() {
     return (
         <div className="Navigation">
             <header className="d-flex p-3">
-                <NavLink className="brand" to="/">#VANLIFE</NavLink>
+                <NavLink 
+                    className="brand" 
+                    to="."
+                >
+                    #VANLIFE
+                </NavLink>
                 <nav className="d-flex ms-auto p-2">
                     <NavLink 
-                        to="/host" 
+                        to="host" 
                         className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
                     >
                         Host
                     </NavLink>
                     <NavLink 
-                        to="/about" 
+                        to="about" 
                         className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
                     >
                         About
                     </NavLink>
                     <NavLink 
-                        to="/vans" 
+                        to="vans" 
                         className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
                     >
                         Vans

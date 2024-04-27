@@ -22,6 +22,10 @@ nav {
     font-variation-settings: "slnt" 0;  
 }
 
+.arrow {
+    text-decoration: none;
+}
+
 .van-type-filter-btn {
     margin: 15px;
     height: 37px;
@@ -67,6 +71,44 @@ nav {
     background-color: #161616;
 }
 
+.orange-long-btn {
+    width: 494.33px;
+    height: 49.83px;    
+    margin-top: 50px;
+    border-width: 0px;
+    border-radius: 5px;
+    font-family: Inter;
+    font-size: 15.95px;
+    font-weight: 700;
+    line-height: 31.66px;
+    background-color: #FF8C38;
+    color: #FFFFFF;
+}
+
+.van-img-sm {
+    width: 65.88px;
+    height: 65.88px;
+    border-radius: 5px;
+}
+
+.van-img-md {
+    width: 160.15px;
+    height: 157.9px;
+    border-radius: 5px;
+}
+
+.van-img-lg {
+    width: 229.23px;
+    height: 229.23px;
+    border-radius: 5px;   
+}
+
+.van-img-xl {
+    width: 497.32px;
+    height: 490.35px;
+    border-radius: 5px;
+}
+
 .nav-link {
     margin-right: 30px;
     color: #4D4D4D;
@@ -85,4 +127,44 @@ nav {
 .nav-link.active {
     color: #161616;
     text-decoration: underline;
+}
+
+/*
+    fonts and texts
+*/
+
+.font-inter-500 {
+    font-family: Inter;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 24px;
+    text-align: left;
+}
+
+.font-inter-600 {
+    font-family: Inter;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 31.66px;
+    text-align: left;
+}
+
+.font-inter-700 {
+    font-family: Inter;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: 30px;
+    text-align: left;
+}
+
+.font-inter-800 {
+    font-family: Inter;
+    font-size: 36px;
+    font-weight: 800;
+    line-height: 42px;
+    text-align: left;
+}
+
+.text-faded {
+    color: #4D4D4D;
 }

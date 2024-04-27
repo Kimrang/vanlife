@@ -3,64 +3,13 @@
     background-image: url('../assets/images/home_img.png');
     background-repeat: no-repeat;
     background-position: 20% 30%;
-    text-align: center;
 }
 
-/* 
-    TODO: need to fix centering 
-*/
 .home-page-greet {
     position: relative;
-    top: 100px;
-    margin-left: auto;
-    margin-right: auto;
+    top: 120px;
+    color: #FFFFFF;
     width: 75%;
-    
+    margin: 0px auto 0px auto;
 }
 
-.home-page-greet .motto {
-    color: #FFFFFF;
-    font-family: Inter;
-    font-size: 36px;
-    font-weight: 800;
-    line-height: 42px;
-    text-align: left;
-}
-
-.home-page-greet .describe {
-    color: #FFFFFF;
-    margin-top: 40px;
-    font-family: Inter;
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 24px;
-    text-align: left;
-}
-
-.link-btn {
-    border-width: 0px;
-}
-
-.orange-long-btn {
-    width: 494.33px;
-    height: 49.83px;    
-    margin-top: 50px;
-    border-width: 0px;
-    border-radius: 5px;
-    font-family: Inter;
-    font-size: 15.95px;
-    font-weight: 700;
-    line-height: 31.66px;
-    background-color: #FF8C38;
-    color: #FFFFFF;
-}
-
-.van-img-xl {
-    width: 497.32px;
-    height: 490.35px;
-    top: 215.27px;
-    left: 26.91px;
-    gap: 0px;
-    border-radius: 5px 0px 0px 0px;
-    opacity: 0px;
-}
