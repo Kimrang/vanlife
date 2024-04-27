@@ -1,5 +1,5 @@
 import React, { useState, useEffect} from "react";
-import { useParams, NavLink, Outlet } from "react-router-dom";
+import { useParams, NavLink, Outlet, Link } from "react-router-dom";
 
 function HostVanDetail() {
     const { id } = useParams();
@@ -11,16 +11,27 @@ function HostVanDetail() {
         .then(data => setVan(data.vans[0]));
     }, [id]);
     
-    console.log(van);
     return (
         <main className="HostVanDetail p-4">
+            <Link
+                to=".."
+                relative="path"
+                className=""
+            >                
+                &larr;
+                <button 
+                    className="van-type-filter-btn clear-filter-btn m-0"
+                >
+                    Back to all vans
+                </button>
+            </Link>
             <div className="bg-white rounded-2">
                 {
                     van
                     ?
                     (
                         <>
-                            <div className="p-4">
+                            <div className="p-4 mt-3">
                                 <div className="d-flex">
                                     <img 
                                         src={van.imageUrl}
@@ -69,7 +80,7 @@ function HostVanDetail() {
                                 </nav>
                             </div>
                             <Outlet 
-                                context={[van, setVan]} 
+                                context={{ van }} 
                             />
                         </>
                     )   

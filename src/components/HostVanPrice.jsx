@@ -2,7 +2,7 @@ import React from "react";
 import { useOutletContext } from "react-router-dom";
 
 export default function HostVanPrice() {
-    const [van] = useOutletContext();
+    const { van } = useOutletContext();
 
     return (
         <section>
