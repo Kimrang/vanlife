@@ -13,7 +13,7 @@ function Home() {
                 </div>          
                 <div className="text-center">
                     <Link to="/vans">
-                        <button className="orange-long-btn link-btn">Find your van</button>
+                        <button className="orange-btn w-100 link-btn">Find your van</button>
                     </Link>
                 </div>
             </div>

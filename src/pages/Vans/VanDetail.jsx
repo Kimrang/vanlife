@@ -1,21 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useLocation } from "react-router-dom";
 import '../../styles/VanDetail.css';
 
 function VanDetail() {  
     const [van, setVan] = useState(null);
+    const location = useLocation()
     const params = useParams();
+
+    const search = location.state?.search || ""
+    const type = location.state?.type || "all"
 
     useEffect(() => {
         fetch(`/api/vans/${params.id}`)
         .then(res => res.json())
-        .then(data => setVan(data.vans))
+        .then(data => setVan(data?data.vans:null))
     }, [params.id]);
-
+    
     return (
         <main className="VanDetail">
             <Link
-                to=".."
+                to={`..${search}`}
                 relative="path"
                 className="ms-3"
             >                
@@ -23,7 +27,7 @@ function VanDetail() {
                 <button 
                     className="van-type-filter-btn clear-filter-btn m-0"
                 >
-                    Back to all vans
+                    {`Back to ${type} vans`}
                 </button>
             </Link>
             {

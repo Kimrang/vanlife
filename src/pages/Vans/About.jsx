@@ -36,7 +36,7 @@ function About() {
                             Your van is ready.
                         </p>
                         <Link to="/vans">
-                            <button className="explore-vans-btn link-btn">
+                            <button className="black-btn link-btn">
                                 Explore our vans
                             </button>
                         </Link>

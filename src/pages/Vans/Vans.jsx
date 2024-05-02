@@ -1,16 +1,27 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import '../../styles/Vans.css';
 import VanVertical from "../../components/VanVertical";
+import { getVans } from "../../api";
 
 function Vans() {
     const [vans, setVans] = useState([]);
+    const [searchParams, setSearchParams] = useSearchParams();
+    const [loading, setLoading] = useState(true)
+    const [error, setError] = useState(null)
 
-    const vans_list = vans.map(van => {
+    let typeFilter = searchParams.get("type");
+
+    const displayedVans = typeFilter
+    ? vans.filter(van => van.type === typeFilter)
+    : vans
+
+    const vans_list = displayedVans.map(van => {
         return (
             <Link 
                 key={van.id}
-                to={`/vans/${van.id}`}
+                to={van.id}
+                state={{ "search": `?${searchParams.toString()}`, "type": typeFilter}}
                 aria-label={`View details for ${van.name}, priced at ${van.price} per day`}
                 className="col-6"
             >
@@ -25,10 +36,26 @@ function Vans() {
     });
 
     useEffect(() => {
-        fetch("/api/vans")
-        .then(res => res.json())
-        .then(data => setVans(data.vans))
+        async function loadVans() {
+            setLoading(true)
+            try {
+                const data = await getVans()
+                setVans(data)
+            } catch(err) {
+                setError(err)    
+            } finally {
+                setLoading(false)
+            }
+        }
+
+        loadVans()
     }, []);
+
+    if(loading)
+        return <p aria-live="polite" className="font-inter-700">Loading...</p>
+
+    if(error)
+        return <p aria-live="assertive" className="font-inter-700 text-center m-5">Error: {error.message}</p>
 
     return (
         <main className="Vans"> 
@@ -37,18 +64,36 @@ function Vans() {
                     Explore our van options
                 </p>
                 <nav className="row">
-                    <button className="van-type-filter-btn col">
+                    <button 
+                        onClick={() => setSearchParams({"type": "simple"})}
+                        className={`van-type-filter-btn selected-${typeFilter==="simple"?typeFilter:""} col`}
+                    >
                         Simple
                     </button>
-                    <button className="van-type-filter-btn col">
+                    <button 
+                        onClick={() => setSearchParams({"type": "luxury"})}
+                        className={`van-type-filter-btn selected-${typeFilter==="luxury"?typeFilter:""} col`}
+                    >
                         Luxury
                     </button>
-                    <button className="van-type-filter-btn col">
+                    <button 
+                        onClick={() => setSearchParams({"type": "rugged"})}
+                        className={`van-type-filter-btn selected-${typeFilter==="rugged"?typeFilter:""} col`}
+                    >
                         Rugged
                     </button>
-                    <button className="van-type-filter-btn clear-filter-btn col">
-                        Clear filters
-                    </button>
+                    {
+                        typeFilter
+                        ?
+                        <button 
+                            onClick={() => setSearchParams({})}
+                            className="van-type-filter-btn clear-filter-btn col"
+                        >
+                            Clear filters
+                        </button>
+                        :
+                        null
+                    }   
                 </nav>
             </div>
             <div className="row p-4">

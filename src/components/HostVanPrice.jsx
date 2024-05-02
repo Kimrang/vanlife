@@ -10,7 +10,11 @@ export default function HostVanPrice() {
                 van 
                 ? 
                 <p className="p-3">
-                    <span className="font-inter-500 fs-3 ms-3">${van.price}</span>/day
+                    <span 
+                        className="font-inter-500 fs-3 ms-3"
+                    >
+                        ${van.price}
+                    </span>/day
                 </p>
                 :
                 <h3>Loading...</h3>

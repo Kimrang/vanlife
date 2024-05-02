@@ -1,16 +1,26 @@
 import React, { useState, useEffect} from "react";
 import { useParams, NavLink, Outlet, Link } from "react-router-dom";
+import { getHostVan } from "../../api";
 
 function HostVanDetail() {
     const { id } = useParams();
     const [van, setVan] = useState(null);
 
     useEffect(() => {
-        fetch(`/api/host/vans/${id}`)
-        .then(res => res.json())
-        .then(data => setVan(data.vans[0]));
+        async function loadHostVan() {
+            try {
+                const data = await getHostVan(id)
+                setVan(data)
+            } catch(err) {
+                console.log(err)
+            }
+        } 
+
+        loadHostVan()
     }, [id]);
-    
+
+    console.log(van)
+
     return (
         <main className="HostVanDetail p-4">
             <Link
@@ -49,7 +59,7 @@ function HostVanDetail() {
                                                 {van.name}
                                         </div>
                                         <div 
-                                            style={{'font-size': '19px'}} 
+                                            style={{'fontSize': '19px'}} 
                                             className="font-inter-700"
                                         >
                                             ${van.price}

@@ -59,6 +59,21 @@ nav {
     color: #FFEAD0;
 }
 
+.van-type-filter-btn.selected-simple {
+    background-color: #E17654;
+    color: #FFEAD0;
+}
+
+.van-type-filter-btn.selected-rugged {
+    background-color: #115E59;
+    color: #FFEAD0;
+}
+
+.van-type-filter-btn.selected-luxury {
+    background-color: #161616;
+    color: #FFEAD0;
+}
+
 .van-type-btn.simple {
     background-color: #E17654;
 }
@@ -71,8 +86,7 @@ nav {
     background-color: #161616;
 }
 
-.orange-long-btn {
-    width: 494.33px;
+.orange-btn {
     height: 49.83px;    
     margin-top: 50px;
     border-width: 0px;
@@ -83,6 +97,15 @@ nav {
     line-height: 31.66px;
     background-color: #FF8C38;
     color: #FFFFFF;
+}
+
+.black-btn {
+    background-color:#161616;
+    color: #FFFFFF;
+    height: 49px;
+    margin-top: 10px;
+    padding: 12px 22px 13px 22px;
+    border-radius: 10px;
 }
 
 .van-img-sm {
