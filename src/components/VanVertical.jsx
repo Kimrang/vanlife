@@ -2,15 +2,6 @@ import React from "react";
 import '../styles/VanVertical.css';
 
 export default function VanVertical({ imageUrl, name, price, type }) {
-    let type_title;
-
-    if(type === 'simple')
-        type_title = 'Simple';
-    else if(type === 'rugged')
-        type_title = 'Rugged';
-    else
-        type_title = 'Luxury'
-
     return (
         <div className="VanVertical text-center mb-5">
             <img className="van-img-lg" src={imageUrl} alt={`a ${name}`} />
@@ -25,7 +16,7 @@ export default function VanVertical({ imageUrl, name, price, type }) {
             </div>
             <div className="text-start">
                 <button className={`van-type-btn ${type} ms-3`}>
-                    {type_title}
+                    {type.charAt(0).toUpperCase() + type.slice(1)}
                 </button>
             </div>
         </div>

@@ -1,15 +1,16 @@
-import React, { useState, useEffect } from "react";
-import { Link, useSearchParams } from "react-router-dom";
+import React from "react";
+import { useLoaderData, Link, useSearchParams } from "react-router-dom";
 import '../../styles/Vans.css';
 import VanVertical from "../../components/VanVertical";
 import { getVans } from "../../api";
 
-function Vans() {
-    const [vans, setVans] = useState([]);
-    const [searchParams, setSearchParams] = useSearchParams();
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
+export function loader() {
+    return getVans()
+}
 
+function Vans() {
+    const vans = useLoaderData()
+    const [searchParams, setSearchParams] = useSearchParams();
     let typeFilter = searchParams.get("type");
 
     const displayedVans = typeFilter
@@ -34,28 +35,6 @@ function Vans() {
             </Link>
         );
     });
-
-    useEffect(() => {
-        async function loadVans() {
-            setLoading(true)
-            try {
-                const data = await getVans()
-                setVans(data)
-            } catch(err) {
-                setError(err)    
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        loadVans()
-    }, []);
-
-    if(loading)
-        return <p aria-live="polite" className="font-inter-700">Loading...</p>
-
-    if(error)
-        return <p aria-live="assertive" className="font-inter-700 text-center m-5">Error: {error.message}</p>
 
     return (
         <main className="Vans"> 

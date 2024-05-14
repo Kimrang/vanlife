@@ -1,26 +1,13 @@
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, useLoaderData } from "react-router-dom";
 import { getHostVans } from "../../api";
 
+export function loader() {
+    return getHostVans()
+}
+
 function HostVans() {
-    const [vans, setVans] = useState([]);
-    const [loading, setLoading] = useState(true)
-    const [error, setError] = useState(null)
-
-    useEffect(() => {
-        async function loadHostVans() {
-            try {
-                const vans = await getHostVans()
-                setVans(vans)
-            } catch(err) {
-                setError(err)
-            } finally {
-                setLoading(false)
-            }
-        }
-
-        loadHostVans()
-    }, []);
+    const vans = useLoaderData()
 
     const hostvans = vans.map((van) => {
         return (
@@ -39,18 +26,6 @@ function HostVans() {
             </Link>
         );
     });
-
-    if(loading) {
-        return (
-            <h1 className="ms-3">Loading...</h1>
-        )
-    }
-
-    if(error) {
-        return (
-            <h1 className="ms-3">Error: {error}</h1>
-        )
-    }
 
     return (
         <main className="HostVans p-4">

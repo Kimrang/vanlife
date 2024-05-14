@@ -1,25 +1,13 @@
-import React, { useState, useEffect} from "react";
-import { useParams, NavLink, Outlet, Link } from "react-router-dom";
-import { getHostVan } from "../../api";
+import React from "react";
+import { NavLink, Outlet, Link, useLoaderData } from "react-router-dom";
+import { getHostVans } from "../../api";
+
+export function loader({ params }) {
+    return getHostVans(params.id)
+}
 
 function HostVanDetail() {
-    const { id } = useParams();
-    const [van, setVan] = useState(null);
-
-    useEffect(() => {
-        async function loadHostVan() {
-            try {
-                const data = await getHostVan(id)
-                setVan(data)
-            } catch(err) {
-                console.log(err)
-            }
-        } 
-
-        loadHostVan()
-    }, [id]);
-
-    console.log(van)
+    const van = useLoaderData()
 
     return (
         <main className="HostVanDetail p-4">

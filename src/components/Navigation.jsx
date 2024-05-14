@@ -30,6 +30,12 @@ export default function Navigation() {
                     >
                         Vans
                     </NavLink>
+                    <NavLink 
+                        to="login" 
+                        className={({isActive})=> isActive ? "nav-link active" : "nav-link"}
+                    >
+                        Login
+                    </NavLink>
                 </nav>
             </header>
         </div>

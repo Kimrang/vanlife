@@ -1,20 +1,17 @@
-import React, { useState, useEffect } from "react";
-import { useParams, Link, useLocation } from "react-router-dom";
+import React from "react";
+import { Link, useLocation, useLoaderData } from "react-router-dom";
 import '../../styles/VanDetail.css';
+import { getVans } from "../../api";
+
+export function loader({ params }) {
+    return getVans(params.id)
+}
 
 function VanDetail() {  
-    const [van, setVan] = useState(null);
+    const van = useLoaderData()
     const location = useLocation()
-    const params = useParams();
-
     const search = location.state?.search || ""
     const type = location.state?.type || "all"
-
-    useEffect(() => {
-        fetch(`/api/vans/${params.id}`)
-        .then(res => res.json())
-        .then(data => setVan(data?data.vans:null))
-    }, [params.id]);
     
     return (
         <main className="VanDetail">
@@ -41,7 +38,7 @@ function VanDetail() {
                             <p className="vandetail-page-name mt-4">{van.name}</p>
                             <p className="vandetail-page-price">${van.price}<span>/day</span></p>
                             <p className="vandetail-page-desc">{van.description}</p>
-                            <button className="orange-long-btn">Rent this van</button>
+                            <button className="orange-btn w-100">Rent this van</button>
                         </div>
                     </div>
                 )
